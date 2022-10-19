@@ -1,0 +1,18 @@
+.featured-products {
+    margin-bottom: 0 0 2rem 0;
+    
+
+
+    .featured-product-grid {
+       display: grid;
+       justify-content: center;
+
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+
+        @include lg {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.5rem; 
+        }
+    }
+}

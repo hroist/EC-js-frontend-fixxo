@@ -1,0 +1,159 @@
+.top-menu {
+    margin: 0;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+
+    .container {
+        position: relative;
+        padding: 1rem;
+        overflow: hidden;
+    }
+
+    .logo {
+        font-size: $font-size-35;
+        font-weight: $font-weight-bold;
+        color: $color-dark;
+    }
+
+    .navbar {
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+        left: 100%;
+
+        .nav-item {
+            display: block;
+            margin: 0.5rem 0.5rem;
+            font-size: $font-size-16;
+            font-weight: $font-weight-medium;
+
+            @include md {
+                display: inline;
+            }
+        }
+
+        @include md {
+            position: static;
+            opacity: 1;
+            visibility: visible;
+        }
+
+    }
+    
+
+    .navbarToggle {
+        position: relative;
+        
+
+        @include md {
+            display: none;
+        }
+    }
+
+    .menu-links {
+        gap: 1rem;
+        line-height: 0;
+        padding-right: 2rem;
+
+        .badge {
+            top: -5px;
+            left: 23px;
+            transition: 0.2s ease-in-out;
+        }
+
+        menu-link-circle:hover .badge {
+            background-color: $color-dark;
+        }
+        
+    }
+
+    .search {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+        cursor: pointer;
+    }
+
+    .closeBtn {
+        position: relative;
+        opacity: 0;
+        visibility: hidden;
+        font-size: $font-size-24;
+        color: $color-gray-40;
+
+        &.active {
+            opacity: 1;
+            visibility: visible;
+            left: 6px;
+        }
+    }
+
+    .searchBtn {
+        position: relative;
+        transition: 0.5s ease-in-out;
+
+        &.active {
+            z-index: -2;
+        }
+    }
+
+    .searchBox {
+        position: absolute;
+        right: -120%;
+        width: 98%;
+        display: flex;
+        align-items: center;
+        padding: 0 3rem;
+        transition: 0.5s ease-in-out;
+
+        input {
+            width: 100%;
+            border: none;
+            outline: none;
+            height: 50px;
+            border-bottom: 1px solid $color-gray-40;
+            font-size: $font-size-16;
+        }
+
+        &.active {
+            right: -30px;
+
+        }
+
+        @include md {
+            position: absolute;
+            width: 100%;
+    
+            &.active {
+                right: -45px;
+            }
+        }
+    }
+
+    &.open {
+
+        .container {
+            overflow: visible;
+
+            .navbar{
+                opacity: 1;
+                visibility: visible;
+                left: calc(100% - 110px);
+                top: 50px;
+                text-align: end;
+                height: calc(100vh - 50px);
+                // width: 100%;
+                background-color: $color-white;
+                padding-right: 2rem;
+            }
+        }
+    }
+}
+
+.top-menu-bg {
+    background-color: $color-white;
+}

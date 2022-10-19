@@ -1,0 +1,68 @@
+.product-display {
+    margin-bottom: 3rem;
+
+    .product-grid-large {
+        display: grid;
+        grid-auto-columns: repeat(6, 1fr);
+        grid-auto-rows: repeat(4, 1fr);
+        grid-column-gap: 0.5rem;
+        grid-row-gap: 0.5rem;
+        justify-content: center;
+        
+        #large-image-upper      { 
+            grid-area: 1 / 1 / 3 / 3; 
+            height: 300px;
+            background-image: url(/src/assets/images/placeholders/grid-large-placeholder.png);
+            background-size: conatin;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        #small-image-upper-1    { grid-area: 3 / 1 / 4 / 2; }
+        #small-image-upper-2    { grid-area: 3 / 2 / 4 / 3; }
+        #small-image-upper-3    { grid-area: 4 / 1 / 5 / 2; }
+        #small-image-upper-4    { grid-area: 4 / 2 / 5 / 3; }
+        #large-image-lower      { 
+            grid-area: 5 / 1 / 7 / 3;
+            background-image: url(/src/assets/images/placeholders/grid-large-placeholder.png);
+            background-size: contain;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        #small-image-lower-1    { grid-area: 7 / 1 / 8 / 2; }
+        #small-image-lower-2    { grid-area: 7 / 2 / 8 / 3; }
+        #small-image-lower-3    { grid-area: 8 / 1 / 9 / 2; }
+        #small-image-lower-4    { grid-area: 8 / 2 / 9 / 3; }
+
+
+        @include lg {
+                display: grid;
+                grid-auto-columns: repeat(2, 1fr);
+                grid-auto-rows: repeat(8, 1fr);
+                
+                #large-image-upper { 
+                    grid-area: 1 / 1 / 3 / 4; 
+                    width: 100%;
+                    height: 100%;       
+                }
+                #small-image-upper-1 { grid-area: 1 / 4 / 2 / 5; }
+                #small-image-upper-2 { grid-area: 1 / 5 / 2 / 6; }
+                #small-image-upper-3 { grid-area: 2 / 4 / 3 / 5; }
+                #small-image-upper-4 { grid-area: 2 / 5 / 3 / 6; }
+                #small-image-lower-1 { grid-area: 3 / 2 / 4 / 3; }
+                #small-image-lower-2 { grid-area: 3 / 3 / 4 / 4; }
+                #small-image-lower-3 { grid-area: 4 / 2 / 5 / 3; }
+                #small-image-lower-4 { grid-area: 4 / 3 / 5 / 4; }
+                #large-image-lower { 
+                    grid-area: 3 / 4 / 5 / 7; 
+                    width: 100%;
+                    height: 100%;
+
+                }
+        }
+    }
+}
