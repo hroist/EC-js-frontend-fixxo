@@ -1,6 +1,6 @@
 import React from 'react'
-import Footer from '../../components/sections/Footer'
-import Topmenu from '../../components/sections/Topmenu'
+import Footer from '../../sections/Footer'
+import Topmenu from '../../sections/Topmenu'
 import BannerSmall from './BannerSmall'
 import FeaturedProducts from './FeaturedProducts'
 import MainBanner from './MainBanner'
@@ -10,7 +10,7 @@ import ProductDisplay from './ProductDisplay'
 import SecondBanner from './SecondBanner'
 import Showcase from './Showcase'
 
-const Start = () => {
+const StartPage = () => {
   return (
     <>
         <Topmenu />
@@ -27,4 +27,4 @@ const Start = () => {
   )
 }
 
-export default Start
+export default StartPage

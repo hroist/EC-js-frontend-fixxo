@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ButtonForms = () => {
+const ButtonForms = ({buttontext}) => {
   return (
     <button className="button-forms">
     {buttontext}

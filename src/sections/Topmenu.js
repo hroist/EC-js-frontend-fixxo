@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import MenuLinkCircle from '../components/ui/MenuLinkCircle'
+import MenuCircle from '../components/ui/MenuCircle'
+import { NavLink } from 'react-router-dom'
 
 const Topmenu = () => {
 
@@ -24,27 +26,21 @@ const Topmenu = () => {
         </div>
         <div className="wrapper">
             <nav className="navbar">
-                <a className='nav-item' href=''>Home</a>
-                <a className='nav-item' href=''>Categories</a>
-                <a className='nav-item' href=''>Products</a>
-                <a className='nav-item' href=''>Contacts</a>
+                <NavLink className="nav-item" to="/">Home</NavLink>
+                <NavLink className="nav-item" to="/categories">Categories</NavLink>
+                <NavLink className="nav-item" to="/products">Products</NavLink>
+                <NavLink className="nav-item" to="/contacts">Contacts</NavLink>
             </nav>
         </div>
         <div className="menu-links sb-content">
-            <a href="#" >
-                <MenuLinkCircle icon="fa-regular fa-code-compare fa-flip-horizontal" />
-            </a>
-            <a href="#" >              
-                <MenuLinkCircle icon="fa-regular fa-heart" badgetext="4" />             
-            </a>
-            <a href="#" >
-                <MenuLinkCircle icon="fa-regular fa-bag-shopping" badgetext="3" />
-            </a>
+            <MenuLinkCircle icon="fa-regular fa-code-compare fa-flip-horizontal" link="/compare" />    
+            <MenuLinkCircle icon="fa-regular fa-heart" badgetext="4" link="/wishlist" />             
+            <MenuLinkCircle icon="fa-regular fa-bag-shopping" badgetext="3" link="/shopping-cart" />
             <div className="search">
-                <MenuLinkCircle icon="fa-regular fa-magnifying-glass" className="searchBtn" />
-                <MenuLinkCircle icon="fa-regular fa-xmark" className="closeBtn" />
+                <MenuCircle icon="fa-regular fa-magnifying-glass" className="searchBtn" />
+                <MenuCircle icon="fa-regular fa-xmark" className="closeBtn" />
             </div>
-            <MenuLinkCircle icon="fa-regular fa-bars" className="navbarToggle" />
+            <MenuCircle icon="fa-regular fa-bars" className="navbarToggle" />
         </div>
         <div className="searchBox">
             <input type="text" placeholder="Search . . . "/>

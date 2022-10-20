@@ -34,6 +34,10 @@
             }
         }
 
+        .active {
+            color: $color-theme;
+        }
+
         @include md {
             position: static;
             opacity: 1;
@@ -155,5 +159,5 @@
 }
 
 .top-menu-bg {
-    background-color: $color-white;
+    background-color: $color-white; 
 }

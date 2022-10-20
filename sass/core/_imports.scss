@@ -2,9 +2,9 @@
 @import "../core/variables";
 @import "../core/breakpoints";
 @import "../core/utilities";
-@import "../../../components/ui/buttons";
+@import "../core/buttons";
 @import "../core/cards";
-@import "../../../sections/topmenu";
+@import "../sections/topmenu";
 @import "../sections/showcase";
 @import "../sections/main-banner";
 @import "../sections/featured-products";
@@ -13,7 +13,7 @@
 @import "../sections/product-display";
 @import "../sections/banner-small";
 @import "../sections/product-columns";
-@import "../../../sections/footer";
-@import "../../../sections/site-title";
-@import "../../../pages/contact-page/contact-page";
-@import "../../../pages/contact-page/contact-form";
+@import "../sections/footer";
+@import "../sections/site-title";
+@import "../pages/contact-page";
+@import "../sections/contact-form";
