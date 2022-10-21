@@ -1,7 +1,7 @@
 import React from 'react'
-import womanSitting from '../../assets/images/placeholders/woman-sitting.svg'
-import manSitting from '../../assets/images/placeholders/man-sitting.svg'
-import ButtonThemeColor from '../../components/ui/ButtonThemeColor'
+import womanSitting from '../assets/images/placeholders/woman-sitting.svg'
+import manSitting from '../assets/images/placeholders/man-sitting.svg'
+import ButtonThemeColor from '../components/ui/ButtonThemeColor'
 
 const Showcase = () => {
   return (

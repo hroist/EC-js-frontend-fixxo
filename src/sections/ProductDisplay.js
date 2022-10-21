@@ -1,5 +1,5 @@
 import React from 'react'
-import placeholder from '../../assets/images/placeholders/prod-card-placeholder.png'
+import placeholder from '../assets/images/placeholders/prod-card-placeholder.png'
 
 const ProductDisplay = () => {
   return (

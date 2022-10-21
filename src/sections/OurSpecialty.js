@@ -1,5 +1,5 @@
 import React from 'react'
-import placeholder from '../../assets/images/placeholders/specialty-card-placeholder.png'
+import placeholder from '../assets/images/placeholders/specialty-card-placeholder.png'
 
 const OurSpecialty = () => {
   return (

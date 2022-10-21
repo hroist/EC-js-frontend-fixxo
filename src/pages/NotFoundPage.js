@@ -1,8 +1,13 @@
 import React from 'react'
+import Topmenu from '../sections/Topmenu'
 
 const NotFoundPage = () => {
   return (
-    <div>404 - Page Not Found</div>
+    <>
+      <Topmenu />
+      <div>404 - Page Not Found</div> 
+    </>
+   
   )
 }
 

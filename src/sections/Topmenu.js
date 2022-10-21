@@ -26,10 +26,10 @@ const Topmenu = () => {
         </div>
         <div className="wrapper">
             <nav className="navbar">
-                <NavLink className="nav-item" to="/">Home</NavLink>
-                <NavLink className="nav-item" to="/categories">Categories</NavLink>
-                <NavLink className="nav-item" to="/products">Products</NavLink>
-                <NavLink className="nav-item" to="/contacts">Contacts</NavLink>
+                <NavLink className="nav-item" to="/" end>Home</NavLink>
+                <NavLink className="nav-item" to="/categories" end>Categories</NavLink>
+                <NavLink className="nav-item" to="/products" end>Products</NavLink>
+                <NavLink className="nav-item" to="/contacts" end>Contacts</NavLink>
             </nav>
         </div>
         <div className="menu-links sb-content">
