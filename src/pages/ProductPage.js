@@ -8,7 +8,7 @@ const ProductPage = () => {
   return (
     <>
         <Topmenu />
-        <SiteTitle />
+        <SiteTitle title="Product XXX" />
         <ProductDetails />
         <Footer />
     </>

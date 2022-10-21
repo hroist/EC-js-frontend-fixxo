@@ -1,5 +1,4 @@
 import React from 'react'
-import Footer from '../sections/Footer'
 import Topmenu from '../sections/Topmenu'
 import BannerSmall from '../sections/BannerSmall'
 import FeaturedProducts from '../sections/FeaturedProducts'

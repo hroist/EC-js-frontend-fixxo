@@ -1,11 +1,12 @@
 import React from 'react'
+import SiteTitle from '../sections/SiteTitle'
 import Topmenu from '../sections/Topmenu'
 
 const WishlistPage = () => {
   return (
     <>
         <Topmenu />
-        <div>WishlistPage</div>
+        <SiteTitle title="Wishlist" />
     </>
   )
 }

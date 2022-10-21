@@ -5,7 +5,7 @@ const SearchPage = () => {
   return (
     <>
         <Topmenu />
-        <div>SearchPage</div>
+        <div>Search results</div>
     </>
   )
 }

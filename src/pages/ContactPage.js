@@ -1,14 +1,14 @@
 import React from 'react'
-import Footer from '../sections/Footer'
 import Topmenu from '../sections/Topmenu'
 import ContactForm from '../sections/ContactForm'
+import SiteTitle from '../sections/SiteTitle'
 
 const ContactPage = () => {
   return (
     <>
         <Topmenu />
+        <SiteTitle title="Contacts" />
         <ContactForm />
-        <Footer />
     </>
   )
 }

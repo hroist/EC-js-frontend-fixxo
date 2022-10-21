@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SiteTitle = () => {
+const SiteTitle = ({title}) => {
   return (
     <section className="site-title">
         <div className="container-small">
@@ -9,7 +9,7 @@ const SiteTitle = () => {
             </div>
             <ul className="site-title-breadcrumb">
                 <li><a href="index.html"><i className="fa-solid fa-house"></i> Home</a></li>
-                <li>Product Signal</li>
+                <li>{title}</li>
             </ul>
         </div>
     </section>
