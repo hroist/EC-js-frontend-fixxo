@@ -10,6 +10,7 @@ import ShoppingCartPage from './pages/ShoppingCartPage';
 import SearchPage from './pages/SearchPage';
 import NotFoundPage from './pages/NotFoundPage';
 import Footer from './sections/Footer';
+import ProductDetailsPage from './pages/ProductDetailsPage';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<StartPage />} />
         <Route path="/products" element={<ProductPage />} />
+        <Route path="/products/:id" element={<ProductDetailsPage />} />
         <Route path="/categories" element={<CategoriesPage />} />
         <Route path="/contacts" element={<ContactPage />} />
         <Route path="/compare" element={<ComparePage />} />

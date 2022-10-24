@@ -7,9 +7,15 @@
     margin-bottom: 80px;
 
     .container {
-        position: relative;
         padding: 1rem;
-        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        @include md {
+            flex-wrap: nowrap;
+        }
     }
 
     .logo {
@@ -19,10 +25,17 @@
     }
 
     .navbar {
-        position: absolute;
-        opacity: 0;
-        visibility: hidden;
-        left: 100%;
+        display: none;
+        background-color: $color-white;
+        opacity: 90%;
+        height: 100%;
+        width: 100%;
+        order: 1;
+        text-align: end;
+
+        &.d-block {
+            display: block;
+        }
 
         .nav-item {
             display: block;
@@ -32,6 +45,7 @@
 
             @include md {
                 display: inline;
+                position: static;
             }
         }
 
@@ -40,17 +54,17 @@
         }
 
         @include md {
-            position: static;
-            opacity: 1;
-            visibility: visible;
+            display: inline;
+            text-align: center;
+            position: relative;
+            order: 0;
+            background-color: transparent;
         }
 
     }
-    
 
     .navbarToggle {
         position: relative;
-        
 
         @include md {
             display: none;
@@ -58,9 +72,9 @@
     }
 
     .menu-links {
-        gap: 1rem;
+        gap: 10px;
         line-height: 0;
-        padding-right: 2rem;
+        padding-right: 1rem;
 
         .badge {
             top: -5px;
@@ -86,13 +100,13 @@
     .closeBtn {
         position: relative;
         opacity: 0;
-        visibility: hidden;
+        display: none;
         font-size: $font-size-24;
         color: $color-gray-40;
 
         &.active {
             opacity: 1;
-            visibility: visible;
+            display: inherit;
             left: 6px;
         }
     }
@@ -122,10 +136,11 @@
             height: 50px;
             border-bottom: 1px solid $color-gray-40;
             font-size: $font-size-16;
+            padding-left: 1rem;
         }
 
         &.active {
-            right: -30px;
+            right: -45px;
 
         }
 
@@ -134,26 +149,7 @@
             width: 100%;
     
             &.active {
-                right: -45px;
-            }
-        }
-    }
-
-    &.open {
-
-        .container {
-            overflow: visible;
-
-            .navbar{
-                opacity: 1;
-                visibility: visible;
-                left: calc(100% - 110px);
-                top: 50px;
-                text-align: end;
-                height: calc(100vh - 50px);
-                // width: 100%;
-                background-color: $color-white;
-                padding-right: 2rem;
+                right: -55px;
             }
         }
     }

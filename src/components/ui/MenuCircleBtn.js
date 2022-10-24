@@ -1,8 +1,8 @@
 import React from 'react'
 
-const MenuCircle = ({className, badgetext, icon}) => {
+const MenuCircleBtn = ({className, badgetext, icon, onClick}) => {
   return (
-    <div className={`menu-link-circle c-content ${className}`}>
+    <div onClick={onClick} className={`menu-link-circle c-content ${className}`}>
         <span className="position-absolute badge">
             {badgetext}
         </span>
@@ -11,4 +11,4 @@ const MenuCircle = ({className, badgetext, icon}) => {
   )
 }
 
-export default MenuCircle
+export default MenuCircleBtn

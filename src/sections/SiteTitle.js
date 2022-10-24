@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 const SiteTitle = ({title}) => {
   return (
@@ -8,7 +9,7 @@ const SiteTitle = ({title}) => {
                 <p>Get 25% OFF at the Fixxo Selection - Shop Now!</p>
             </div>
             <ul className="site-title-breadcrumb">
-                <li><a href="index.html"><i className="fa-solid fa-house"></i> Home</a></li>
+                <li><NavLink to="/"><i className="fa-solid fa-house"></i> Home</NavLink></li>
                 <li>{title}</li>
             </ul>
         </div>

@@ -8,7 +8,7 @@ const ContactPage = () => {
     <>
         <Topmenu />
         <SiteTitle title="Contacts" />
-        <ContactForm />
+
     </>
   )
 }

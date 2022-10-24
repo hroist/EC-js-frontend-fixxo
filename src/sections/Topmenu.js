@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import MenuLinkCircle from '../components/ui/MenuLinkCircle'
-import MenuCircle from '../components/ui/MenuCircle'
+import MenuCircleBtn from '../components/ui/MenuCircleBtn'
 import { NavLink } from 'react-router-dom'
 
 const Topmenu = () => {
@@ -16,29 +16,39 @@ const Topmenu = () => {
     }
     window.addEventListener('scroll', changeColor)
 
+    // Navbar toggle on mobile
+    const [showMenu, setShowMenu] = useState(false)
+    const toggleMenu = () => {
+        setShowMenu(!showMenu)
+    }
+
+    // Search box show on click
+    const [showSearch, setShowSearch] = useState(false)
+    const toggleSearch = () => {
+        setShowSearch(!showSearch)
+    }
+
     return (
         <header className={color ? 'top-menu top-menu-bg' : 'top-menu'}>
-        <div className="container sb-content">
+        <div className="container">
             <NavLink className="logo" to="/" end>Fixxo.</NavLink>
-            <div className="wrapper">
-                <nav className="navbar">
-                    <NavLink className="nav-item" to="/" end>Home</NavLink>
-                    <NavLink className="nav-item" to="/categories" end>Categories</NavLink>
-                    <NavLink className="nav-item" to="/products" end>Products</NavLink>
-                    <NavLink className="nav-item" to="/contacts" end>Contacts</NavLink>
-                </nav>
-            </div>
+            <nav className={`navbar ${ showMenu ? "d-block" : "" }`}>
+                <NavLink className="nav-item" to="/" end>Home</NavLink>
+                <NavLink className="nav-item" to="/categories" end>Categories</NavLink>
+                <NavLink className="nav-item" to="/products" >Products</NavLink>
+                <NavLink className="nav-item" to="/contacts" end>Contacts</NavLink>
+            </nav>
             <div className="menu-links sb-content">
-                <MenuLinkCircle icon="fa-regular fa-code-compare fa-flip-horizontal" link="/compare" />    
+                <MenuLinkCircle icon="fa-regular fa-code-compare fa-flip-horizontal" link="/compare" className="collapse-sm" />    
                 <MenuLinkCircle icon="fa-regular fa-heart" badgetext="4" link="/wishlist" />             
                 <MenuLinkCircle icon="fa-regular fa-bag-shopping" badgetext="3" link="/shopping-cart" />
                 <div className="search">
-                    <MenuCircle icon="fa-regular fa-magnifying-glass" className="searchBtn" />
-                    <MenuCircle icon="fa-regular fa-xmark" className="closeBtn" />
+                    <MenuCircleBtn onClick={toggleSearch} icon="fa-regular fa-magnifying-glass" className={`searchBtn ${ showSearch ? "active" : "" }`} />
+                    <MenuCircleBtn onClick={toggleSearch} icon="fa-regular fa-xmark" className={`closeBtn ${ showSearch ? "active" : "" }`} />
                 </div>
-                <MenuCircle icon="fa-regular fa-bars" className="navbarToggle" />
+                <MenuCircleBtn onClick={toggleMenu} icon="fa-regular fa-bars" className="navbarToggle" />
             </div>
-            <div className="searchBox">
+            <div icon="fa-regular fa-magnifying-glass" className={`searchBox ${ showSearch ? "active" : "" }`}>
                 <input type="text" placeholder="Search . . . "/>
             </div>
         </div>

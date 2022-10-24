@@ -1,6 +1,7 @@
 import React from 'react'
 
 const ProductDetails = () => {
+
   return (
     <section className="product-details">
         <div className="container-small">
@@ -13,7 +14,7 @@ const ProductDetails = () => {
                         <div>small image</div>
                     </div>
                     <div className="product-details-content">
-                        <h1>Product name</h1>
+                        <h1>Product Name</h1>
                         <p>SKU: 12345670 BRAND: The Northland</p>
                         <div className="card-review-stars">
                             <i className="fa-solid fa-star"></i>
