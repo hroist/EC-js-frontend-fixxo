@@ -3,6 +3,8 @@ import SiteTitle from '../sections/SiteTitle'
 import Topmenu from '../sections/Topmenu'
 
 const ShoppingCartPage = () => {
+  window.top.document.title = 'Fixxo. || Shopping cart'
+
   return (
     <>
         <Topmenu />

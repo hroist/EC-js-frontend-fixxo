@@ -5,6 +5,8 @@ import Topmenu from '../sections/Topmenu'
 import ProductDetails from '../sections/ProductDetails'
 
 const ProductPage = () => {
+  window.top.document.title = 'Fixxo. || Products '
+
   return (
     <>
         <Topmenu />
