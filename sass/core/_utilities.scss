@@ -60,16 +60,6 @@ p {
     align-items: center;
 }
 
-.sb-content-top {
-    
-
-    @include md {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-    }
-}
-
 .position-absolute {
     position: absolute;
 }

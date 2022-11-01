@@ -255,8 +255,28 @@
 .product-details-card {
     color: $color-gray-40;
 
+    .sb-content-top {
+    
+        @include md {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+    }
+
     .product-details-images {
-        flex: 1;
+        width: 100%;
+        height: 300px;
+        margin: 0 auto;
+
+        @include md {
+            flex: 1;
+            width: 100%;
+            height: 300px;
+            margin: 0 auto;
+
+        }
     }
 
     .product-details-content {

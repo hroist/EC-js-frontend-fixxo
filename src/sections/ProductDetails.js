@@ -1,20 +1,33 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
+import ImageSlider from '../components/ImageSlider'
 
 
 const ProductDetails = ({item}) => {
+
+    const slides = [
+        {url: "https://images.pexels.com/photos/2529147/pexels-photo-2529147.jpeg", title: "Shoe1" },
+        {url: "https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg", title: "Shoe2" },
+        {url: "https://images.pexels.com/photos/1070360/pexels-photo-1070360.jpeg", title: "Shoe3" },
+        {url: "https://images.pexels.com/photos/1858404/pexels-photo-1858404.jpeg", title: "Shoe4" }
+    ];
 
   return (
     <section className="product-details">
         <div className="container-small">
             <div className="product-details-card">
                 <div className="sb-content-top">
-                    <div className="product-details-images">
+                    {/* <div className="product-details-images">
                         <img className="large-image" src={item.imageName} alt={item.name} />
                         <img id="small-image1" src={item.imageName} alt={item.name} />
                         <img id="small-image2" src={item.imageName} alt={item.name} />
                         <img id="small-image3" src={item.imageName} alt={item.name} />
+                    </div> */}
+
+                    <div className="product-details-images">
+                        <ImageSlider slides={slides} />
                     </div>
+
                     <div className="product-details-content">
                         <h1>{item.name}</h1>
                         <p>SKU: {item.articleNumber} BRAND: The Northland</p>
@@ -96,6 +109,8 @@ const ProductDetails = ({item}) => {
         </div>
     </section>
   )
+
+
 }
 
 export default ProductDetails
