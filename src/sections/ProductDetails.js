@@ -1,6 +1,8 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
 
-const ProductDetails = () => {
+
+const ProductDetails = ({item}) => {
 
   return (
     <section className="product-details">
@@ -8,14 +10,14 @@ const ProductDetails = () => {
             <div className="product-details-card">
                 <div className="sb-content-top">
                     <div className="product-details-images">
-                        <div>large image</div>
-                        <div>small image</div>
-                        <div>small image</div>
-                        <div>small image</div>
+                        <img className="large-image" src={item.imageName} alt={item.name} />
+                        <img id="small-image1" src={item.imageName} alt={item.name} />
+                        <img id="small-image2" src={item.imageName} alt={item.name} />
+                        <img id="small-image3" src={item.imageName} alt={item.name} />
                     </div>
                     <div className="product-details-content">
-                        <h1>Product Name</h1>
-                        <p>SKU: 12345670 BRAND: The Northland</p>
+                        <h1>{item.name}</h1>
+                        <p>SKU: {item.articleNumber} BRAND: The Northland</p>
                         <div className="card-review-stars">
                             <i className="fa-solid fa-star"></i>
                             <i className="fa-solid fa-star"></i>
@@ -23,7 +25,7 @@ const ProductDetails = () => {
                             <i className="fa-solid fa-star"></i>
                             <i className="fa-solid fa-star"></i>
                         </div>
-                        <p className="card-original-price">€50.00</p>
+                        <p className="card-original-price">{item.price}</p>
                         <p className="product-description">Discovered had get considered projection who favourable. Necessary up knowledge it tolerably. Unwilling departure education is be dashwoods or an. Use off agreeable law unwilling sir deficient curiosity instantly. (read more) </p>
                         <div className="product-details-grid">
                             <div>Size:</div>

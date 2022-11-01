@@ -34,15 +34,15 @@ const ProductCard = ({item}) => {
                         </button>
                     </li>
                 </ul>
-                <img src={item.img} alt={item.productName} />
-                <NavLink to={`/products/${item.id}`} className="product-card-quickview">
+                <img src={item.imageName} alt={item.name} />
+                <NavLink to={`/products/${item.articleNumber}`} className="product-card-quickview">
                     QUICK VIEW
                 </NavLink>
                 <div className="card-background"></div>
             </div>
             <div className="card-text text-center">
                 <h3>{item.category}</h3>
-                <h2>{item.productName}</h2>
+                <h2>{item.name}</h2>
                 <div className="card-review-stars">
                     <i className="fa-solid fa-star"></i>
                     <i className="fa-solid fa-star"></i>
