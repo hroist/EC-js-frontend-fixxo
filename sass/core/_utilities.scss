@@ -44,8 +44,8 @@ p {
 
 .l-content {
     display: flex;
-    justify-content: center;
-    align-items: baseline;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 .start-content {

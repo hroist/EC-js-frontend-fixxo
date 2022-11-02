@@ -1,7 +1,7 @@
 import React from 'react'
 import ProductCard from '../components/ProductCard'
 
-const ProductGrid = ({ title, classNameSection, classNameGrid, items = [] }) => {
+const ProductGrid = ({ title, classNameCard, classNameSection, classNameGrid, items = [] }) => {
 
   return (
     <section className={`product-grid-container txt-c ${classNameSection}`}>
@@ -9,7 +9,7 @@ const ProductGrid = ({ title, classNameSection, classNameGrid, items = [] }) => 
     <div className="container-small">
         <div className={classNameGrid}>
             {
-                items.map( product => <ProductCard key={product.articleNumber} item={product} />)
+                items.map( product => <ProductCard classNameCard={classNameCard} key={product.articleNumber} item={product} />)
             }                     
         </div>
     </div>

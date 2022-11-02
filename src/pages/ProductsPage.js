@@ -12,7 +12,7 @@ const ProductsPage = () => {
     <>
         <Topmenu />
         <SiteTitle title="Products" />
-        <ProductGrid title="Products" items={productContext.allProducts} />
+        <ProductGrid title="Products" classNameGrid="featured-product-grid" items={productContext.allProducts} />
     </>
   )
 }

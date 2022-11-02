@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-const ProductCard = ({item}) => {
+const ProductCard = ({item, classNameCard}) => {
 
     const addToWishlist = (e) => {
         console.log(`${e} added to wishlist`)
@@ -15,7 +15,7 @@ const ProductCard = ({item}) => {
 
   return (
     <>
-        <div className="product-card c-content">
+        <div className={`product-card ${classNameCard}`}>
             <div className="card-image">
                 <ul className="card-image-menu">
                     <li>

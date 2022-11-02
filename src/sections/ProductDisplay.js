@@ -1,13 +1,11 @@
 import React, { useContext } from 'react'
-import placeholder from '../assets/images/placeholders/prod-card-placeholder.png'
 import { ProductContext } from '../contexts/Contexts'
 import ProductGrid from './ProductGrid'
 
 const ProductDisplay = () => {
-    const productContext = useContext(ProductContext)
+  const productContext = useContext(ProductContext)
 
   return (
-    <section className="product-display">
         <div className="container">
             <div className="product-grid-large">
                 <div className="display-image-large"> 
@@ -24,7 +22,6 @@ const ProductDisplay = () => {
                 </div>
             </div>
         </div>
-    </section>
   )
 }
 

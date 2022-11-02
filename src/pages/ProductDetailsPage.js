@@ -20,9 +20,7 @@ const ProductDetailsPage = () => {
     <>
         <Topmenu />
         <SiteTitle title={thisProduct.name} />
-        <h1></h1>
         <ProductDetails item={thisProduct} />
-        <Footer />
     </>
   )
 }
