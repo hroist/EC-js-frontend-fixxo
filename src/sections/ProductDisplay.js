@@ -10,15 +10,15 @@ const ProductDisplay = () => {
     <section className="product-display">
         <div className="container">
             <div className="product-grid-large">
-                <div id="large-image-upper"> 
+                <div className="display-image-large"> 
                     <h1>2 FOR USD $29</h1>
                     <button className="button-theme-white">FLASH SALE</button>
                 </div>
-                <ProductGrid className="product-display-grid" items={productContext.featuredProducts} />
+                <ProductGrid classNameGrid="product-display-grid" classNameSection="product-display-container" items={productContext.featuredProducts} />
             </div>
             <div className="product-grid-large">
-                <ProductGrid className="product-display-grid" items={productContext.featuredProducts} />
-                <div id="large-image-lower"> 
+                <ProductGrid classNameGrid="product-display-grid" classNameSection="product-display-container" items={productContext.featuredProducts} />
+                <div className="display-image-large"> 
                     <h1>2 FOR USD $29</h1>
                     <button className="button-theme-white">FLASH SALE</button>
                 </div>

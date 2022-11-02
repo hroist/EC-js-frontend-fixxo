@@ -20,7 +20,7 @@ const StartPage = () => {
         <Topmenu />
         <Showcase />
         <MainBanner />
-        <ProductGrid title="Featured Products" className="featured-product-grid" items={productContext.featuredProducts} />
+        <ProductGrid title="Featured Products" classNameGrid="featured-product-grid" items={productContext.featuredProducts} />
         <SecondBanner />
         <OurSpecialty />
         <ProductDisplay />

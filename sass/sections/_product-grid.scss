@@ -15,6 +15,16 @@
     }
 
     .product-display-grid {
-        
+        flex: 1;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
     }
+
+    &.product-display-container {
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+    }
+
 }
