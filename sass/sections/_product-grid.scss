@@ -1,7 +1,5 @@
-.featured-products {
+.product-grid-container {
     margin-bottom: 3rem ;
-    
-
 
     .featured-product-grid {
        display: grid;
@@ -14,5 +12,9 @@
             grid-template-columns: repeat(4, 1fr);
             gap: 0.5rem; 
         }
+    }
+
+    .product-display-grid {
+        
     }
 }

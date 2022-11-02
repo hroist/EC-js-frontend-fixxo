@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import { ProductContext } from '../contexts/Contexts'
-import Footer from '../sections/Footer'
 import ProductGrid from '../sections/ProductGrid'
 import SiteTitle from '../sections/SiteTitle'
 import Topmenu from '../sections/Topmenu'
@@ -14,7 +13,6 @@ const ProductsPage = () => {
         <Topmenu />
         <SiteTitle title="Products" />
         <ProductGrid title="Products" items={productContext.allProducts} />
-        <Footer />
     </>
   )
 }

@@ -33,25 +33,27 @@ function App() {
       { articleNumber: 3, name: "September Sneaker", category: "Fashion", price: "$35.00", rating: 5, imageName: "https://images.pexels.com/photos/1972115/pexels-photo-1972115.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
       { articleNumber: 4, name: "Mini Bag", category: "Fashion", price: "$35.00", rating: 5, imageName: "https://images.pexels.com/photos/1374910/pexels-photo-1374910.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"},
     ]
-})
+  })
+
 
   // const [products, setProducts] = useState({
   //   allProducts: [],
   //   featuredProducts: []
-  // })
+  //   })
 
-  // useEffect(() => {
-  //    const fetchAll = async () => {
+  // useEffect( () => {
+
+  //    const fetchAllProducts = async () => {
   //     let result = await fetch('https://win22-webapi.azurewebsites.net/api/products')
   //     setProducts({...products, allProducts: await result.json()})
   //    }
-  //    fetchAll()
+  //    fetchAllProducts();
 
   //    const fetchFeaturedProducts = async () => {
-  //     let result = await fetch('https://win22-webapi.azurewebsites.net/api/products?take=8')
-  //     setProducts({...products, featuredProducts: await result.json()})
+  //     let result = await fetch('https://win22-webapi.azurewebsites.net/api/products?take=8');
+  //     setProducts({...products, featuredProducts: await result.json()});
   //    }
-  //    fetchFeaturedProducts()
+  //    fetchFeaturedProducts();
 
   // }, [setProducts])
 
