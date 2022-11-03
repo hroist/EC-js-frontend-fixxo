@@ -45,7 +45,7 @@ p {
 .l-content {
     display: flex;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .start-content {
@@ -66,6 +66,10 @@ p {
 
 .txt-c {
     text-align: center;
+}
+
+.pt-1 {
+    padding-top: 1rem;
 }
 
 // COMPONENTS

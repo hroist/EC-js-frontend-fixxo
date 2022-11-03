@@ -1,6 +1,6 @@
-import React from 'react'
-import { useParams } from 'react-router-dom'
+import React, { useState } from 'react'
 import ImageSlider from '../components/ImageSlider'
+import SizeButton from '../components/ui/SizeButton';
 
 
 const ProductDetails = ({item}) => {
@@ -11,6 +11,27 @@ const ProductDetails = ({item}) => {
         {url: "https://images.pexels.com/photos/1070360/pexels-photo-1070360.jpeg", title: "Shoe3" },
         {url: "https://images.pexels.com/photos/1858404/pexels-photo-1858404.jpeg", title: "Shoe4" }
     ];
+
+    const [dropdown, setDropdown] = useState(false)
+    const handleDropdown = () => {
+        setDropdown(!dropdown)
+    }
+    const [color, setColor] = useState("Choose a color")
+    const chooseColor = (e) => {
+        setColor(e.target.innerHTML)
+        setDropdown(!dropdown)
+    }
+
+    const [counter, setCounter] = useState(0)
+    const handleClickPlus = () => {
+        // Counter state is incremented
+        setCounter(counter + 1)
+      }
+
+    const handleClickMinus = () => {
+        // Counter state is decremented
+        setCounter(counter - 1)
+    }
 
   return (
     <section className="product-details">
@@ -34,43 +55,81 @@ const ProductDetails = ({item}) => {
                         <p className="card-original-price">{item.price}</p>
                         <p className="product-description">Discovered had get considered projection who favourable. Necessary up knowledge it tolerably. Unwilling departure education is be dashwoods or an. Use off agreeable law unwilling sir deficient curiosity instantly. (read more) </p>
                         <div className="product-details-grid">
-                            <div>Size:</div>
-                            <div>Sizes buttons</div>
+                            <div className='l-content'>Size:</div>
+                            <div className='sizes'>
+                                <SizeButton size="XS" />
+                                <SizeButton size="S" />
+                                <SizeButton size="M" />
+                                <SizeButton size="XXL" />
+                            </div>
                         </div>
                         <div className="product-details-grid">
-                            <div>Color:</div>
-                            <div>Color dropdown</div>
+                            <div className="pt-1">Color:</div>
+                            <div>
+                                <button className="dropdown sb-content" onClick={handleDropdown}><span>{color}</span><i class="fa-regular fa-chevron-down"></i></button>
+                                {
+                                dropdown ? 
+                                <div className="dropdown-open">
+                                    <ul className="dropdown-list">
+                                        <li onClick={chooseColor}>Red</li>
+                                        <li onClick={chooseColor}>White</li>
+                                        <li onClick={chooseColor}>Blue</li>
+                                    </ul>
+                                </div> 
+                                :  "" }
+                            </div>
                         </div>
                         <div className="product-details-grid">
-                            <div>Quantity</div>
+                            <div className='l-content'>Quantity:</div>
                             <div className="start-content gap">
-                                <div>+ - counter</div>
+                                <div className="quantity-counter">
+                                    <div onClick={handleClickMinus} className='decrease c-content'>
+                                        -
+                                    </div>
+                                    <div className='counter-number c-content'>
+                                        {counter}
+                                    </div>
+                                    <div onClick={handleClickPlus} className='increase c-content'>
+                                        +
+                                    </div>
+
+                                </div>
                                 <button className="button-forms">ADD TO CART</button>
                             </div>
                         </div>
                         <div className="product-details-grid">
                             <div>Share:</div>
                             <div className="start-content share-links">
-                                <span className="fa-stack">
-                                    <i className="fa-solid fa-circle fa-stack-2x"></i>
-                                    <i className="fa-brands fa-facebook-f fa-stack-1x fa-inverse" style={{color: "Black"}}></i>
-                                </span>
-                                <span className="fa-stack">
-                                    <i className="fa-solid fa-circle fa-stack-2x"></i>
-                                    <i className="fa-brands fa-instagram fa-stack-1x fa-inverse" style={{color: "Black"}}></i>
-                                </span>
-                                <span className="fa-stack">
-                                    <i className="fa-solid fa-circle fa-stack-2x"></i>
-                                    <i className="fa-brands fa-twitter fa-stack-1x fa-inverse" style={{color: "Black"}}></i>
-                                </span>
-                                <span className="fa-stack">
-                                    <i className="fa-solid fa-circle fa-stack-2x"></i>
-                                    <i className="fa-brands fa-google fa-stack-1x fa-inverse" style={{color: "Black"}}></i>
-                                </span>
-                                <span className="fa-stack">
-                                    <i className="fa-solid fa-circle fa-stack-2x"></i>
-                                    <i className="fa-brands fa-linkedin-in fa-stack-1x fa-inverse" style={{color: "Black"}}></i>
-                                </span>
+                                <a href="https://facebook.com">
+                                    <span className="fa-stack">
+                                        <i className="fa-solid fa-circle fa-stack-2x"></i>
+                                        <i className="fa-brands fa-facebook-f fa-stack-1x fa-inverse" style={{color: "Black"}}></i>
+                                    </span>
+                                </a>
+                                <a href="https://instagram.com">
+                                    <span className="fa-stack">
+                                        <i className="fa-solid fa-circle fa-stack-2x"></i>
+                                        <i className="fa-brands fa-instagram fa-stack-1x fa-inverse" style={{color: "Black"}}></i>
+                                    </span>
+                                </a>
+                                <a href="https://twitter.com">
+                                    <span className="fa-stack">
+                                        <i className="fa-solid fa-circle fa-stack-2x"></i>
+                                        <i className="fa-brands fa-twitter fa-stack-1x fa-inverse" style={{color: "Black"}}></i>
+                                    </span>
+                                </a>
+                                <a href="https://google.com">
+                                    <span className="fa-stack">
+                                        <i className="fa-solid fa-circle fa-stack-2x"></i>
+                                        <i className="fa-brands fa-google fa-stack-1x fa-inverse" style={{color: "Black"}}></i>
+                                    </span>
+                                </a>
+                                <a href="https://linkedin.com">
+                                    <span className="fa-stack">
+                                        <i className="fa-solid fa-circle fa-stack-2x"></i>
+                                        <i className="fa-brands fa-linkedin-in fa-stack-1x fa-inverse" style={{color: "Black"}}></i>
+                                    </span>
+                                </a>
                             </div>
                         </div>
                     </div>

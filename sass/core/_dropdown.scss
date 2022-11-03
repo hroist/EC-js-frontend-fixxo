@@ -1,0 +1,24 @@
+.dropdown {
+    margin: 0.5rem 0;
+    width: 150px;
+    background-color: $color-white;
+    border: 1px solid $color-gray-40;
+    padding: 0.5rem;
+    color: $color-text-dark;
+    font-family: $font-poppins;
+    cursor: pointer;
+    text-align: start;
+
+}
+.dropdown-open {
+
+   .dropdown-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+        cursor: pointer;
+    }
+} 
+}
