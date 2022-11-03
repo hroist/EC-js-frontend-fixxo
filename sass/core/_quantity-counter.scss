@@ -1,7 +1,7 @@
 .quantity-counter {
     display: flex;
     border: 1px solid $color-gray-40;
-    height: 50px;
+    height: 40px;
 
     .decrease {
         border-right: 1px solid $color-gray-40;;
@@ -12,7 +12,7 @@
     }
 
     .counter-number {
-        width: 50px;
+        width: 35px;
     }
 
     .increase {

@@ -11,6 +11,7 @@ const ProductDetails = ({item}) => {
         {url: "https://images.pexels.com/photos/1070360/pexels-photo-1070360.jpeg", title: "Shoe3" },
         {url: "https://images.pexels.com/photos/1858404/pexels-photo-1858404.jpeg", title: "Shoe4" }
     ];
+  
 
     const [dropdown, setDropdown] = useState(false)
     const handleDropdown = () => {
@@ -24,13 +25,15 @@ const ProductDetails = ({item}) => {
 
     const [counter, setCounter] = useState(0)
     const handleClickPlus = () => {
-        // Counter state is incremented
         setCounter(counter + 1)
       }
 
     const handleClickMinus = () => {
-        // Counter state is decremented
-        setCounter(counter - 1)
+        if(counter === 0) {
+            setCounter(0)
+        } else {
+            setCounter(counter - 1)
+        }
     }
 
     const [productDetails, setProductDetails] = useState("product-details-description")
@@ -99,8 +102,14 @@ const ProductDetails = ({item}) => {
                                     </div>
 
                                 </div>
-                                <button className="button-forms">ADD TO CART</button>
+                                
                             </div>
+                        </div>
+                        <div className='product-details-grid'>
+                            <div></div>
+                            <div>
+                                <button className="button-forms">ADD TO CART</button>
+                            </div>                           
                         </div>
                         <div className="product-details-grid">
                             <div>Share:</div>

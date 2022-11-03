@@ -13,11 +13,17 @@
 .dropdown-open {
 
    .dropdown-list {
+    position: absolute;
     list-style: none;
-    padding: 0;
+    padding: 0.3rem;
     margin: 0;
-
+    background-color: $color-white;
+    border: 1px solid $color-gray-40;
+    transform: translate(0, -9px);
+    width: 139px;
+    
     li {
+        font-size: $font-size-14;
         cursor: pointer;
     }
 } 

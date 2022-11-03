@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const SizeButton = ({size}) => {
+
   return (
-    <div className='size-button'>{size}</div>
-  )
-}
+      <button className='size-button'>{size}</button>
+    )
+  }
 
 export default SizeButton
