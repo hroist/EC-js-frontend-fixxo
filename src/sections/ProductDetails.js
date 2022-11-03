@@ -33,6 +33,11 @@ const ProductDetails = ({item}) => {
         setCounter(counter - 1)
     }
 
+    const [productDetails, setProductDetails] = useState("product-details-description")
+    const handleProductDetails = (e) => {
+        setProductDetails(e.target.id)
+    }
+
   return (
     <section className="product-details">
         <div className="container-small">
@@ -66,7 +71,7 @@ const ProductDetails = ({item}) => {
                         <div className="product-details-grid">
                             <div className="pt-1">Color:</div>
                             <div>
-                                <button className="dropdown sb-content" onClick={handleDropdown}><span>{color}</span><i class="fa-regular fa-chevron-down"></i></button>
+                                <button className="dropdown sb-content" onClick={handleDropdown}><span>{color}</span><i className="fa-regular fa-chevron-down"></i></button>
                                 {
                                 dropdown ? 
                                 <div className="dropdown-open">
@@ -136,23 +141,23 @@ const ProductDetails = ({item}) => {
                 </div>
                 <div className="product-details-nav">
                     <ul className="product-details-nav-list gap start-content">
-                        <li id="product-id-description" className="product-details-nav-item">Description</li>
-                        <li id="product-id-additional" className="product-details-nav-item">Additional</li>
-                        <li id="product-id-shipping" className="product-details-nav-item">Shipping & Return</li>
-                        <li id="product-id-reviews" className="product-details-nav-item">Reviews</li>
+                        <li id="product-details-description" onClick={handleProductDetails} className="product-details-nav-item">Description</li>
+                        <li id="product-details-additional" onClick={handleProductDetails} className="product-details-nav-item">Additional</li>
+                        <li id="product-details-shipping" onClick={handleProductDetails} className="product-details-nav-item">Shipping & Return</li>
+                        <li id="product-details-reviews" onClick={handleProductDetails} className="product-details-nav-item">Reviews</li>
                     </ul>
 
-                    <div className="product-details-text">
-                        <div id="product-id-description-text">
+                    <div className="product-details-box">
+                        <div className={`product-details-text ${productDetails === "product-details-description" ? "active" : "" }`}>
                             <p>Way extensive and dejection get delivered deficient sincerity gentleman age. Too end instrument possession contrasted motionless. Calling offence six joy feeling. Coming merits and was talent enough far. Sir joy northward sportsmen education. Discovery incommode earnestly no he commanded if. Put still any about manor heard. </p>
                         </div>
-                        <div id="product-id-additional-text">
+                        <div className={`product-details-text ${productDetails === "product-details-additional" ? "active" : "" }`}>
                             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit fuga, in laborum voluptatem quas voluptates beatae molestias quia iusto saepe aliquam illo consequatur quo doloribus neque nostrum deleniti, cumque nesciunt!</p>
                         </div>
-                        <div id="product-id-shipping-text">
+                        <div className={`product-details-text ${productDetails === "product-details-shipping" ? "active" : "" }`}>
                             <p>Shopping and return details</p>
                         </div>
-                        <div id="product-id-reviews-text">
+                        <div className={`product-details-text ${productDetails === "product-details-reviews" ? "active" : "" }`}>
                             <p>On even feet time have an no at. Relation so in confined smallest children unpacked delicate. Why sir end believe uncivil respect. Always get adieus nature day course for common. My little garret repair to desire he esteem. </p>
                         </div>
                     </div>

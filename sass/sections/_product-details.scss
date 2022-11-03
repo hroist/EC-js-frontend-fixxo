@@ -91,31 +91,13 @@
         
     }
 
-    #product-id-description-text {
+    .product-details-text {
         display: none;
+
         &.active {
             display: block;
-        }       
+        }
     }
 
-    #product-id-additional-text {
-        display: none;
-        &.active {
-            display: block;
-        }     
-    }
 
-    #product-id-shipping-text {
-        display: none;
-        &.active {
-            display: block;
-        }     
-    }
-
-    #product-id-reviews-text {
-        display: none;
-        &.active {
-            display: block;
-        }     
-    } 
 }
