@@ -17,13 +17,6 @@ const ProductDetails = ({item}) => {
         <div className="container-small">
             <div className="product-details-card">
                 <div className="sb-content-top">
-                    {/* <div className="product-details-images">
-                        <img className="large-image" src={item.imageName} alt={item.name} />
-                        <img id="small-image1" src={item.imageName} alt={item.name} />
-                        <img id="small-image2" src={item.imageName} alt={item.name} />
-                        <img id="small-image3" src={item.imageName} alt={item.name} />
-                    </div> */}
-
                     <div className="product-details-images">
                         <ImageSlider slides={slides} />
                     </div>

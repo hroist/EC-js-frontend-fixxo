@@ -1,5 +1,6 @@
 import React from 'react'
 import placeholder from '../assets/images/placeholders/specialty-card-placeholder.png'
+import { NavLink } from 'react-router-dom'
 
 const OurSpecialty = () => {
   return (
@@ -12,7 +13,7 @@ const OurSpecialty = () => {
                         <h3>
                             Track Your Order
                         </h3>
-                        <a href="#">Get started {">"}</a>
+                        <NavLink to="/">Get started {">"}</NavLink>
                     </div>
                     <img src={placeholder} alt="Product image placeholder" />
                 </div>
@@ -21,7 +22,7 @@ const OurSpecialty = () => {
                         <h3>
                             Make a Return
                         </h3>
-                        <a href="#">Get Started {">"}</a>
+                        <NavLink to="/">Get started {">"}</NavLink>
                     </div>
                     <img src={placeholder} alt="Product image placeholder" />
                 </div>
@@ -30,7 +31,7 @@ const OurSpecialty = () => {
                         <h3>
                             Request a Price Adjustment
                         </h3>
-                        <a href="#">Get Started {">"}</a>
+                        <NavLink to="/">Get started {">"}</NavLink>
                     </div>
                     <img src={placeholder} alt="Product image placeholder" />
                 </div>

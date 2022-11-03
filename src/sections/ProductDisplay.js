@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { ProductContext } from '../contexts/Contexts'
 import ProductGrid from './ProductGrid'
+import { NavLink } from 'react-router-dom'
 
 const ProductDisplay = () => {
   const productContext = useContext(ProductContext)
@@ -10,15 +11,19 @@ const ProductDisplay = () => {
             <div className="product-grid-large">
                 <div className="display-image-large"> 
                     <h1>2 FOR USD $29</h1>
-                    <button className="button-theme-white">FLASH SALE</button>
+                    <NavLink to="/products">
+                        <button className="button-theme-white">FLASH SALE</button>
+                    </NavLink>
                 </div>
-                <ProductGrid classNameGrid="product-display-grid" classNameSection="product-display-container" items={productContext.featuredProducts} />
+                <ProductGrid classNameCard="text-left" classNameGrid="product-display-grid" classNameSection="product-display-container" items={productContext.featuredProducts} />
             </div>
             <div className="product-grid-large">
-                <ProductGrid classNameGrid="product-display-grid" classNameSection="product-display-container" items={productContext.featuredProducts} />
+                <ProductGrid classNameCard="text-left" classNameGrid="product-display-grid" classNameSection="product-display-container" items={productContext.featuredProducts} />
                 <div className="display-image-large"> 
                     <h1>2 FOR USD $29</h1>
-                    <button className="button-theme-white">FLASH SALE</button>
+                    <NavLink to="/products">
+                        <button className="button-theme-white">FLASH SALE</button>
+                    </NavLink>
                 </div>
             </div>
         </div>

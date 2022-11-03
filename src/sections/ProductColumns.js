@@ -1,7 +1,6 @@
 import React, {useContext} from 'react'
-import placeholder from '../assets/images/placeholders/prod-card-placeholder.png'
-import ProductGrid from './ProductGrid'
 import { ProductContext } from '../contexts/Contexts'
+import ProductCard from '../components/ProductCard'
 
 const ProductColumns = () => {
 
@@ -9,14 +8,22 @@ const ProductColumns = () => {
 
   return (
     <section className="product-columns">
-    <div className="container">
-            <h2 className="column-title">Latest Products</h2>
-            <ProductGrid classNameCard="text-right l-content" classNameGrid="product-columns-grid" classNameSection="product-grid-container" items={productContext.featuredProducts} />
-            <h2 className="column-title">Best Selling Products</h2>
-            <ProductGrid classNameCard="text-right l-content" classNameGrid="product-columns-grid" classNameSection="product-grid-container" items={productContext.featuredProducts} />
-            <h2 className="column-title">Top Reacted Products</h2>
-            <ProductGrid classNameCard="text-right l-content" classNameGrid="product-columns-grid" classNameSection="product-grid-container" items={productContext.featuredProducts} />
-    </div>
+      <div className="container">
+        <div className="product-columns-grid">
+          <h2 className="column-title">Latest Products</h2>
+          <ProductCard classNameCard="text-right l-content" item={productContext.allProducts[0]} />
+          <ProductCard classNameCard="text-right l-content" item={productContext.allProducts[3]} />
+          <ProductCard classNameCard="text-right l-content" item={productContext.allProducts[2]} />
+          <h2 className="column-title">Best Selling Products</h2>
+          <ProductCard classNameCard="text-right l-content" item={productContext.allProducts[2]} />
+          <ProductCard classNameCard="text-right l-content" item={productContext.allProducts[2]} />
+          <ProductCard classNameCard="text-right l-content" item={productContext.allProducts[4]} />            
+          <h2 className="column-title">Top Reacted Products</h2>
+          <ProductCard classNameCard="text-right l-content" item={productContext.allProducts[2]} />
+          <ProductCard classNameCard="text-right l-content" item={productContext.allProducts[3]} />
+          <ProductCard classNameCard="text-right l-content" item={productContext.allProducts[1]} />
+        </div>
+      </div>
 </section>
   )
 }

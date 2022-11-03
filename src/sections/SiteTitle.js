@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-const SiteTitle = ({title}) => {
+const SiteTitle = ({title, parentTitle}) => {
   return (
     <section className="site-title">
         <div className="container-small">
@@ -10,6 +10,7 @@ const SiteTitle = ({title}) => {
             </div>
             <ul className="site-title-breadcrumb">
                 <li><NavLink to="/"><i className="fa-solid fa-house"></i> Home</NavLink></li>
+                {parentTitle}
                 <li>{title}</li>
             </ul>
         </div>

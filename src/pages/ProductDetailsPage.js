@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 import { useParams } from 'react-router-dom'
 import { ProductContext } from '../contexts/Contexts'
-import Footer from '../sections/Footer'
 import ProductDetails from '../sections/ProductDetails'
+import ProductGrid from '../sections/ProductGrid'
 import SiteTitle from '../sections/SiteTitle'
 import Topmenu from '../sections/Topmenu'
 
@@ -19,8 +19,9 @@ const ProductDetailsPage = () => {
   return (
     <>
         <Topmenu />
-        <SiteTitle title={thisProduct.name} />
+        <SiteTitle title={thisProduct.name} parentTitle={<li>Products</li>} />
         <ProductDetails item={thisProduct} />
+        <ProductGrid classNameCard="text-left" classNameGrid="related-product-grid" items={productContext.featuredProducts} title="Related products" /> 
     </>
   )
 }

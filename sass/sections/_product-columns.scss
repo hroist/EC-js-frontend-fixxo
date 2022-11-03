@@ -1,13 +1,11 @@
-.product-columns {
-    margin-bottom: 3rem;
-    
-    .container {
-
-       @include lg {
-        max-width: 60%;
-       }
+    .product-columns {
+        margin-bottom: 3rem;
         
+        .container {
+            max-width: 60%;
+    
         .product-columns-grid {
+            
             @include md {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
@@ -16,8 +14,9 @@
                 grid-row-gap: 1rem;
                 grid-auto-flow: column;
                 align-items: flex-end;
+                
             }
-
+    
             @include xl {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
@@ -26,11 +25,11 @@
                 grid-row-gap: 1rem;
                 grid-auto-flow: column;
             }
-
+    
             .column-title {
                 display: flex;
                 justify-content: center;
-
+    
                 @include md {
                     justify-content: flex-start;
                     font-size: $font-size-20;
@@ -38,5 +37,6 @@
                 }
             }
         }
-    }   
-}
+            
+        }   
+    }

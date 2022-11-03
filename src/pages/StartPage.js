@@ -9,6 +9,7 @@ import SecondBanner from '../sections/SecondBanner'
 import Showcase from '../sections/Showcase'
 import ProductGrid from '../sections/ProductGrid'
 import { ProductContext } from '../contexts/Contexts'
+import InfoIcons from '../sections/InfoIcons'
 
 const StartPage = () => {
   window.top.document.title = 'Fixxo.'
@@ -25,7 +26,8 @@ const StartPage = () => {
         <OurSpecialty />
         <ProductDisplay />
         <BannerSmall />
-        <ProductColumns />
+        <ProductColumns items={productContext.aProduct} />
+        <InfoIcons />
     </>
   )
 }

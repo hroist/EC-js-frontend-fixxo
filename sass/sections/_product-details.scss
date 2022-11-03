@@ -1,0 +1,99 @@
+.product-details-card {
+    color: $color-gray-40;
+
+    .sb-content-top {
+        display: flex;
+        flex-direction: column;
+            
+        @include md {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+    }
+
+    .product-details-images {
+        width: 100%;
+        height: 300px;
+        margin: 0 auto;
+
+        @include md {
+            flex: 1;
+            width: 100%;
+            margin: 0 auto;
+
+        }
+    }
+
+    .product-details-content {
+        flex: 1;
+
+        h1 {
+            margin: 0;
+            font-size: $font-size-20;
+            color: $color-text-dark;
+        }
+    }
+
+    .product-details-grid {
+        display: grid;
+        grid-template-columns: 100px 1fr;
+
+        .share-links {
+            font-size: $font-size-13;
+            color: $color-gray-10;
+        }
+    }
+
+    .product-details-nav-list {
+        list-style: none;
+        padding-left: 0;
+        padding-bottom: 0.4rem;
+        border-bottom: 1px solid $color-gray-30;
+        flex-wrap: wrap;
+        
+        .product-details-nav-item {
+            color: $color-gray-40;
+            font-weight: $font-weight-medium;
+            cursor: pointer;
+
+            &:hover {
+                color: $color-theme;
+                text-decoration: underline;
+                text-decoration-color: $color-theme;
+                text-decoration-thickness: 2px;
+                text-underline-offset: 0.7rem;
+            }
+        }
+        
+    }
+
+    #product-id-description-text {
+        display: none;
+        &.active {
+            display: block;
+        }       
+    }
+
+    #product-id-additional-text {
+        display: none;
+        &.active {
+            display: block;
+        }     
+    }
+
+    #product-id-shipping-text {
+        display: none;
+        &.active {
+            display: block;
+        }     
+    }
+
+    #product-id-reviews-text {
+        display: none;
+        &.active {
+            display: block;
+        }     
+    } 
+}

@@ -6,13 +6,11 @@ const ProductGrid = ({ title, classNameCard, classNameSection, classNameGrid, it
   return (
     <section className={`product-grid-container txt-c ${classNameSection}`}>
     <h1 className="section-title">{title}</h1>
-    <div className="container-small">
         <div className={classNameGrid}>
             {
                 items.map( product => <ProductCard classNameCard={classNameCard} key={product.articleNumber} item={product} />)
             }                     
         </div>
-    </div>
 </section>
   )
 }
