@@ -8,12 +8,12 @@ import ProductDisplay from '../sections/ProductDisplay'
 import SecondBanner from '../sections/SecondBanner'
 import Showcase from '../sections/Showcase'
 import ProductGrid from '../sections/ProductGrid'
-import { ProductContext } from '../contexts/Contexts'
+import { FeaturedProductContext } from '../contexts/Contexts'
 import InfoIcons from '../sections/InfoIcons'
 
 const StartPage = () => {
   window.top.document.title = 'Fixxo.'
-  const productContext = useContext(ProductContext)
+  const productContext = useContext(FeaturedProductContext)
 
   
   return (
@@ -21,12 +21,12 @@ const StartPage = () => {
         <Topmenu />
         <Showcase />
         <MainBanner />
-        <ProductGrid title="Featured Products" classNameGrid="featured-product-grid" items={productContext.featuredProducts} />
+        <ProductGrid title="Featured Products" classNameGrid="featured-product-grid" items={productContext} />
         <SecondBanner />
         <OurSpecialty />
         <ProductDisplay />
         <BannerSmall />
-        <ProductColumns items={productContext.aProduct} />
+        <ProductColumns />
         <InfoIcons />
     </>
   )

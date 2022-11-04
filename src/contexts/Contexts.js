@@ -1,3 +1,5 @@
 import { createContext } from "react";
 
-export const ProductContext = createContext()
+export const AllProductContext = createContext()
+export const FeaturedProductContext = createContext()
+export const DisplayProductContext = createContext()
