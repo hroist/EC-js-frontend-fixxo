@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { useEffect, useState } from 'react';
 import './App.min.css';
 import { ProductProvider } from './contexts/Contexts';
+import { ShoppingCartProvider } from './contexts/ShoppingCartContext';
 import StartPage from './pages/StartPage';
 import ProductsPage from './pages/ProductsPage';
 import CategoriesPage from './pages/CategoriesPage';
@@ -41,20 +41,22 @@ function App() {
 
   return (
     <BrowserRouter>
-      <ProductProvider>
-        <Routes>
-          <Route path="/" element={<StartPage />} />
-          <Route path="/products" element={<ProductsPage />} />
-          <Route path="/products/:id" element={<ProductDetailsPage />} />
-          <Route path="/categories" element={<CategoriesPage />} />
-          <Route path="/contacts" element={<ContactPage />} />
-          <Route path="/compare" element={<ComparePage />} />
-          <Route path="/wishlist" element={<WishlistPage />} />
-          <Route path="/shopping-cart" element={<ShoppingCartPage />} />
-          <Route path="/search" element={<SearchPage />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
-      </ProductProvider>
+      <ShoppingCartProvider>
+        <ProductProvider>
+          <Routes>
+            <Route path="/" element={<StartPage />} />
+            <Route path="/products" element={<ProductsPage />} />
+            <Route path="/products/:id" element={<ProductDetailsPage />} />
+            <Route path="/categories" element={<CategoriesPage />} />
+            <Route path="/contacts" element={<ContactPage />} />
+            <Route path="/compare" element={<ComparePage />} />
+            <Route path="/wishlist" element={<WishlistPage />} />
+            <Route path="/shopping-cart" element={<ShoppingCartPage />} />
+            <Route path="/search" element={<SearchPage />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </ProductProvider>
+      </ShoppingCartProvider>
       <Footer />  
     </BrowserRouter>
   );

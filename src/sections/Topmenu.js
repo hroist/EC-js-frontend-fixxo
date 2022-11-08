@@ -2,8 +2,12 @@ import React, { useState } from 'react'
 import MenuLinkCircle from '../components/ui/MenuLinkCircle'
 import MenuCircleBtn from '../components/ui/MenuCircleBtn'
 import { NavLink } from 'react-router-dom'
+import ShoppingCart from '../components/ShoppingCart'
+import { useShoppingCart } from '../contexts/ShoppingCartContext'
 
 const Topmenu = () => {
+
+    const {cartQuantity} = useShoppingCart()
 
     // change bg-color on scroll
     const [color, setColor] = useState(false)
@@ -28,6 +32,11 @@ const Topmenu = () => {
         setShowSearch(!showSearch)
     }
 
+    const [cartOpen, setCartOpen] = useState(false)
+    const toggleShoppingCart = () => {
+        setCartOpen(!cartOpen)
+    }
+
     return (
         <header className={color ? 'top-menu top-menu-bg' : 'top-menu'}>
         <div className="container">
@@ -40,8 +49,9 @@ const Topmenu = () => {
             </nav>
             <div className="menu-links sb-content">
                 <MenuLinkCircle icon="fa-regular fa-code-compare fa-flip-horizontal" link="/compare" className="collapse-sm" />    
-                <MenuLinkCircle icon="fa-regular fa-heart" badgetext="4" link="/wishlist" />             
-                <MenuLinkCircle icon="fa-regular fa-bag-shopping" badgetext="3" link="/shopping-cart" />
+                <MenuLinkCircle icon="fa-regular fa-heart" badgetext="4" link="/wishlist" /> 
+                <MenuCircleBtn icon="fa-regular fa-bag-shopping" badgetext={cartQuantity} onClick={toggleShoppingCart}/>
+                <ShoppingCart className={`${cartOpen ? "open" : ""}`} />
                 <div className="search">
                     <MenuCircleBtn onClick={toggleSearch} icon="fa-regular fa-magnifying-glass" className={`searchBtn ${ showSearch ? "active" : "" }`} />
                     <MenuCircleBtn onClick={toggleSearch} icon="fa-regular fa-xmark" className={`closeBtn ${ showSearch ? "active" : "" }`} />

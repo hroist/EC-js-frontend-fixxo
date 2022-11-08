@@ -135,6 +135,8 @@
     box-shadow: 0px 0px 15px 1px $color-gray-20;
     font-size: 15px;
     transition: 0.2s ease-in-out;
+    z-index: 2;
+    cursor: pointer;
 
     &:hover {
         background-color: $color-dark;

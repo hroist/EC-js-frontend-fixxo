@@ -1,7 +1,10 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import { useShoppingCart } from '../contexts/ShoppingCartContext'
 
 const ProductCard = ({item, classNameCard}) => {
+
+    const { incrementQuantity } = useShoppingCart()
 
     const addToWishlist = (e) => {
         console.log(`${e} added to wishlist`)
@@ -29,7 +32,7 @@ const ProductCard = ({item, classNameCard}) => {
                         </button>
                     </li>
                     <li>
-                        <button onClick={addToCart} className="menu-link-circle c-content">
+                        <button onClick={() => incrementQuantity({articleNumber: item.articleNumber, product: item})} className="menu-link-circle c-content">
                             <i className="fa-regular fa-bag-shopping"></i>
                         </button>
                     </li>
