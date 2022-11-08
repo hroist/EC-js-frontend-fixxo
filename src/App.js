@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import './App.min.css';
-import { AllProductContext, FeaturedProductContext, DisplayProductContext } from './contexts/Contexts';
+import { ProductProvider } from './contexts/Contexts';
 import StartPage from './pages/StartPage';
 import ProductsPage from './pages/ProductsPage';
 import CategoriesPage from './pages/CategoriesPage';
@@ -37,52 +37,24 @@ function App() {
   // })
 
 
-  const [allProducts, setAllProducts] = useState([])
-  const [featuredProducts, setFeaturedProducts] = useState([])
-  const [displayProducts, setDisplayProducts] = useState([])
-
-  useEffect( () => {
-
-    const fetchAllProducts = async () => {
-      let result = await fetch('https://win22-webapi.azurewebsites.net/api/products')
-      setAllProducts(await result.json())
-    }
-    fetchAllProducts()
-
-    const fetchFeaturedProducts = async () => {
-      let result = await fetch('https://win22-webapi.azurewebsites.net/api/products?take=8');
-      setFeaturedProducts(await result.json())
-    }
-    fetchFeaturedProducts()
-
-    const fetchDisplayProducts = async () => {
-      let result = await fetch('https://win22-webapi.azurewebsites.net/api/products?take=4');
-      setDisplayProducts(await result.json())
-    }
-    fetchDisplayProducts()
-
-  }, [setAllProducts, setFeaturedProducts, setDisplayProducts])
+  
 
   return (
     <BrowserRouter>
-      <AllProductContext.Provider value={allProducts}>
-        <FeaturedProductContext.Provider value={featuredProducts}>
-          <DisplayProductContext.Provider value={displayProducts}>
-              <Routes>
-                <Route path="/" element={<StartPage />} />
-                <Route path="/products" element={<ProductsPage />} />
-                <Route path="/products/:id" element={<ProductDetailsPage />} />
-                <Route path="/categories" element={<CategoriesPage />} />
-                <Route path="/contacts" element={<ContactPage />} />
-                <Route path="/compare" element={<ComparePage />} />
-                <Route path="/wishlist" element={<WishlistPage />} />
-                <Route path="/shopping-cart" element={<ShoppingCartPage />} />
-                <Route path="/search" element={<SearchPage />} />
-                <Route path="*" element={<NotFoundPage />} />
-              </Routes>
-            </DisplayProductContext.Provider>
-          </FeaturedProductContext.Provider>
-        </AllProductContext.Provider>
+      <ProductProvider>
+        <Routes>
+          <Route path="/" element={<StartPage />} />
+          <Route path="/products" element={<ProductsPage />} />
+          <Route path="/products/:id" element={<ProductDetailsPage />} />
+          <Route path="/categories" element={<CategoriesPage />} />
+          <Route path="/contacts" element={<ContactPage />} />
+          <Route path="/compare" element={<ComparePage />} />
+          <Route path="/wishlist" element={<WishlistPage />} />
+          <Route path="/shopping-cart" element={<ShoppingCartPage />} />
+          <Route path="/search" element={<SearchPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </ProductProvider>
       <Footer />  
     </BrowserRouter>
   );

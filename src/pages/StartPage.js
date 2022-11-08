@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useEffect } from 'react'
 import Topmenu from '../sections/Topmenu'
 import BannerSmall from '../sections/BannerSmall'
 import MainBanner from '../sections/MainBanner'
@@ -8,12 +8,16 @@ import ProductDisplay from '../sections/ProductDisplay'
 import SecondBanner from '../sections/SecondBanner'
 import Showcase from '../sections/Showcase'
 import ProductGrid from '../sections/ProductGrid'
-import { FeaturedProductContext } from '../contexts/Contexts'
+import { useProductContext } from '../contexts/Contexts'
 import InfoIcons from '../sections/InfoIcons'
 
 const StartPage = () => {
   window.top.document.title = 'Fixxo.'
-  const productContext = useContext(FeaturedProductContext)
+  const {featuredProducts, fetchFeaturedProducts} = useProductContext()
+
+  useEffect(() => {
+    fetchFeaturedProducts(8)
+  }, [])
 
   
   return (
@@ -21,7 +25,7 @@ const StartPage = () => {
         <Topmenu />
         <Showcase />
         <MainBanner />
-        <ProductGrid title="Featured Products" classNameGrid="featured-product-grid" items={productContext} />
+        <ProductGrid title="Featured Products" classNameGrid="featured-product-grid" items={featuredProducts} />
         <SecondBanner />
         <OurSpecialty />
         <ProductDisplay />
