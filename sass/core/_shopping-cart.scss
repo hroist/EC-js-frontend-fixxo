@@ -4,7 +4,7 @@
     display: none;
     width: 0;
     top: 0;
-    right: 0;    
+    right: 0;
     z-index: 1;
     background-color: $color-white;
     overflow-x: hidden;
@@ -13,65 +13,120 @@
 
     &.open {
         width: 100%;
-        display: inherit;
+        display: flex;
+        flex-direction: column;
 
         @include sm {
             width: 350px;
-            display: inherit;
-
         }
     }
 
-  }
-  
-.shoppingcart-item {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  margin: 30px 20px;
+    .close-cart {
+      background-color: transparent;
+      border: 1px solid $color-gray-20;
+      align-self: flex-end;
+      cursor: pointer;
+      transition: 0.2s ease-in-out;
 
-  .item-image {
-    flex: 1;
-    background-color: $color-gray-20;
-    height: 65px;
-    width: 65px;
 
-    img {
-      height: 65px;
-      width: 65px;
+      &:hover {
+        background-color: $color-dark;
+        color: $color-white;
+      }
     }
 
   }
 
-  .item-info {
-    flex: 2;
+  .items-box {
 
-    .item-info-name {
-      font-weight: $font-weight-medium;
-      margin-bottom: 1rem;
-    }
+    .shoppingcart-item {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin: 30px 20px;
 
-    .item-info-quantity {
+      .item-image {
+        background-color: $color-gray-20;
+        height: 65px;
+        width: 65px;
+        margin-right: 5px;
 
-      span {
-        margin: 0 8px;
+        img {
+          height: 65px;
+          width: 65px;
+        }
+
       }
 
+      .item-info {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 170px;
+        justify-self: flex-start;
+        
+        .item-info-name {
+          display: inline-block;
+          font-weight: $font-weight-medium;
+          font-size: $font-size-14;
+          margin-bottom: 16px;
+          margin-top: 7px;
+          
+          
+        }
+
+        .quantity-counter {
+          border: 1px solid $color-gray-40;
+          height: 25px;
+          width: 95px;
+              
+          .decrease {
+              border-right: 1px solid $color-gray-40;;
+              width: 30px;
+              font-weight: $font-weight-bold;
+              font-size: $font-size-20;
+              cursor: pointer;
+          }
+      
+          .counter-number {
+              width: 35px;
+          }
+      
+          .increase {
+              border-left: 1px solid $color-gray-40;
+              width: 30px;
+              font-weight: $font-weight-bold;
+              font-size: $font-size-20;
+              cursor: pointer;
+          }
+        }
+      }
+
+      .item-price {
+        justify-self: flex-end;
+        font-size: $font-size-14;
+        font-weight: $font-weight-medium;
+        text-align: right;
+        padding-left: 6px;
+        
+
+        button {
+          margin-top: 8px;
+          border: none; 
+          background-color: transparent;
+          cursor: pointer;
+          transition: 0.2s ease-in-out;
+
+          &:hover {
+            color: $color-theme;
+          }
+
+        }
+      }
     }
   }
+  
 
-  .item-price {
-    flex: 1;
-    font-weight: $font-weight-medium;
-    text-align: right;
-    border: 1px solid blue;
-
-    button {
-      border: none; 
-      background-color: transparent;
-    }
-  }
-}
 
 
   

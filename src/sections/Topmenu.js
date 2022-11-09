@@ -7,7 +7,7 @@ import { useShoppingCart } from '../contexts/ShoppingCartContext'
 
 const Topmenu = () => {
 
-    const {cartQuantity} = useShoppingCart()
+    const {cartQuantity, cartOpen, toggleShoppingCart} = useShoppingCart()
 
     // change bg-color on scroll
     const [color, setColor] = useState(false)
@@ -32,10 +32,6 @@ const Topmenu = () => {
         setShowSearch(!showSearch)
     }
 
-    const [cartOpen, setCartOpen] = useState(false)
-    const toggleShoppingCart = () => {
-        setCartOpen(!cartOpen)
-    }
 
     return (
         <header className={color ? 'top-menu top-menu-bg' : 'top-menu'}>

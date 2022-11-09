@@ -1,15 +1,19 @@
 import React, { useState } from 'react'
 import ImageSlider from '../components/ImageSlider'
 import SizeButton from '../components/ui/SizeButton';
+import { useShoppingCart } from '../contexts/ShoppingCartContext';
+import { currencyFormatter } from '../utilities/currencyFormatter';
 
 
 const ProductDetails = ({item}) => {
 
+    const { incrementQuantity, addMultipleItems } = useShoppingCart()
+
     const slides = [
-        {url: "https://images.pexels.com/photos/2529147/pexels-photo-2529147.jpeg", title: "Shoe1" },
-        {url: "https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg", title: "Shoe2" },
-        {url: "https://images.pexels.com/photos/1070360/pexels-photo-1070360.jpeg", title: "Shoe3" },
-        {url: "https://images.pexels.com/photos/1858404/pexels-photo-1858404.jpeg", title: "Shoe4" }
+        {url: item.imageName, title: item.name },
+        {url: "https://images.pexels.com/photos/2340254/pexels-photo-2340254.jpeg", title: "Placeholder-1" },
+        {url: "https://images.pexels.com/photos/1037995/pexels-photo-1037995.jpeg", title: "Placeholder-2" },
+        {url: "https://images.pexels.com/photos/911254/pexels-photo-911254.jpeg", title: "Placeholder-3" }
     ];
   
 
@@ -60,7 +64,7 @@ const ProductDetails = ({item}) => {
                             <i className="fa-solid fa-star"></i>
                             <i className="fa-solid fa-star"></i>
                         </div>
-                        <p className="card-original-price">{item.price}</p>
+                        <p className="card-original-price">{currencyFormatter(item.price)}</p>
                         <p className="product-description">Discovered had get considered projection who favourable. Necessary up knowledge it tolerably. Unwilling departure education is be dashwoods or an. Use off agreeable law unwilling sir deficient curiosity instantly. (read more) </p>
                         <div className="product-details-grid">
                             <div className='l-content'>Size:</div>
@@ -100,7 +104,6 @@ const ProductDetails = ({item}) => {
                                     <div onClick={handleClickPlus} className='increase c-content'>
                                         +
                                     </div>
-
                                 </div>
                                 
                             </div>
@@ -108,7 +111,7 @@ const ProductDetails = ({item}) => {
                         <div className='product-details-grid'>
                             <div></div>
                             <div>
-                                <button className="button-forms">ADD TO CART</button>
+                                <button className="button-forms" onClick={() => addMultipleItems({articleNumber: item.articleNumber, product: item}, counter)}>ADD TO CART</button>
                             </div>                           
                         </div>
                         <div className="product-details-grid">

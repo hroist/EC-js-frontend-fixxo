@@ -10,7 +10,7 @@ const ProductDetailsPage = () => {
   window.top.document.title = 'Fixxo. || Product X'
 
   const {featuredProducts, fetchFeaturedProducts, product, fetchProduct} = useProductContext()
-  const  params  = useParams() 
+  const params  = useParams() 
 
   useEffect(() => {
     fetchFeaturedProducts(8)

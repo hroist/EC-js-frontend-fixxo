@@ -4,16 +4,17 @@ import ShoppingCartItem from './ShoppingCartItem'
 
 
 const ShoppingCart = ({className}) => {
-    const { cartItems } = useShoppingCart()
-
-
+    const { cartItems, toggleShoppingCart } = useShoppingCart()
+    
+   
   return (
 
-        <div id="shoppingCart" className={`offcanvas-right ${className}`}>
+        <div className={`offcanvas-right ${className}`}>
+            <button className='close-cart' onClick={toggleShoppingCart}>X</button>
             <h2>
                 <i className='fa-regular fa-bag-shopping'></i> Your shopping cart
             </h2>
-            <div>
+            <div className='items-box'>
                 {
                     cartItems.map(item => (<ShoppingCartItem key={item.articleNumber} item={item} />) )
                 }
