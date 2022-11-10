@@ -122,12 +122,14 @@
 
     .searchBox {
         position: absolute;
-        right: -120%;
+        visibility: hidden;
+        right: -100%;
         width: 98%;
         display: flex;
         align-items: center;
         padding: 0 3rem;
         transition: 0.5s ease-in-out;
+        z-index: 3;
 
         input {
             width: 100%;
@@ -141,6 +143,7 @@
 
         &.active {
             right: -45px;
+            visibility: visible;
 
         }
 
@@ -150,6 +153,7 @@
     
             &.active {
                 right: -55px;
+                visibility: visible;
             }
         }
     }

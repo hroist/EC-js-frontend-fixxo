@@ -44,17 +44,17 @@ const Topmenu = () => {
                 <NavLink className="nav-item" to="/contacts" end>Contacts</NavLink>
             </nav>
             <div className="menu-links sb-content">
-                <MenuLinkCircle icon="fa-regular fa-code-compare fa-flip-horizontal" link="/compare" className="collapse-sm" />    
-                <MenuLinkCircle icon="fa-regular fa-heart" badgetext="4" link="/wishlist" /> 
-                <MenuCircleBtn icon="fa-regular fa-bag-shopping" badgetext={cartQuantity} onClick={toggleShoppingCart}/>
+                <MenuLinkCircle aria-label='compare' icon="fa-regular fa-code-compare fa-flip-horizontal" link="/compare" className="collapse-sm" />    
+                <MenuLinkCircle aria-label='wishlist' icon="fa-regular fa-heart" badgetext="4" link="/wishlist" /> 
+                <MenuCircleBtn aria-label='cart' icon="fa-regular fa-bag-shopping" badgetext={cartQuantity} onClick={toggleShoppingCart} data-testid="shoppingCart"/>
                 <ShoppingCart className={`${cartOpen ? "open" : ""}`} />
                 <div className="search">
-                    <MenuCircleBtn onClick={toggleSearch} icon="fa-regular fa-magnifying-glass" className={`searchBtn ${ showSearch ? "active" : "" }`} />
-                    <MenuCircleBtn onClick={toggleSearch} icon="fa-regular fa-xmark" className={`closeBtn ${ showSearch ? "active" : "" }`} />
+                    <MenuCircleBtn aria-label='search' onClick={toggleSearch} icon="fa-regular fa-magnifying-glass" className={`searchBtn ${ showSearch ? "active" : "" }`} />
+                    <MenuCircleBtn aria-label='closeSearch' onClick={toggleSearch} icon="fa-regular fa-xmark" className={`closeBtn ${ showSearch ? "active" : "" }`} />
                 </div>
                 <MenuCircleBtn onClick={toggleMenu} icon="fa-regular fa-bars" className="navbarToggle" />
             </div>
-            <div icon="fa-regular fa-magnifying-glass" className={`searchBox ${ showSearch ? "active" : "" }`}>
+            <div data-testid="searchbox" icon="fa-regular fa-magnifying-glass" className={`searchBox ${ showSearch ? "active" : "" }`}>
                 <input type="text" placeholder="Search . . . "/>
             </div>
         </div>

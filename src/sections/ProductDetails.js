@@ -3,6 +3,7 @@ import ImageSlider from '../components/ImageSlider'
 import SizeButton from '../components/ui/SizeButton';
 import { useShoppingCart } from '../contexts/ShoppingCartContext';
 import { currencyFormatter } from '../utilities/currencyFormatter';
+import Dropdown from '../components/Dropdown'
 
 
 const ProductDetails = ({item}) => {
@@ -16,17 +17,6 @@ const ProductDetails = ({item}) => {
         {url: "https://images.pexels.com/photos/911254/pexels-photo-911254.jpeg", title: "Placeholder-3" }
     ];
   
-
-    const [dropdown, setDropdown] = useState(false)
-    const handleDropdown = () => {
-        setDropdown(!dropdown)
-    }
-    const [color, setColor] = useState("Choose a color")
-    const chooseColor = (e) => {
-        setColor(e.target.innerHTML)
-        setDropdown(!dropdown)
-    }
-
     const [counter, setCounter] = useState(0)
     const handleClickPlus = () => {
         setCounter(counter + 1)
@@ -77,19 +67,7 @@ const ProductDetails = ({item}) => {
                         </div>
                         <div className="product-details-grid">
                             <div className="pt-1">Color:</div>
-                            <div>
-                                <button className="dropdown sb-content" onClick={handleDropdown}><span>{color}</span><i className="fa-regular fa-chevron-down"></i></button>
-                                {
-                                dropdown ? 
-                                <div className="dropdown-open">
-                                    <ul className="dropdown-list">
-                                        <li onClick={chooseColor}>Red</li>
-                                        <li onClick={chooseColor}>White</li>
-                                        <li onClick={chooseColor}>Blue</li>
-                                    </ul>
-                                </div> 
-                                :  "" }
-                            </div>
+                            <Dropdown colors={["red", "gray", "black", "white"]} />
                         </div>
                         <div className="product-details-grid">
                             <div className='l-content'>Quantity:</div>

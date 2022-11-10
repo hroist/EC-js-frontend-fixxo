@@ -13,9 +13,7 @@ const ProductCard = ({item, classNameCard}) => {
     const addToCompare = (e) => {
         console.log("added to compare")
     }
-    const addToCart = (e) => {
-        console.log("added to shopping cart")
-    }
+
 
   return (
     <>
@@ -33,7 +31,7 @@ const ProductCard = ({item, classNameCard}) => {
                         </button>
                     </li>
                     <li>
-                        <button onClick={() => incrementQuantity({articleNumber: item.articleNumber, product: item})} className="menu-link-circle c-content">
+                        <button data-testid="cartButton" onClick={() => incrementQuantity({articleNumber: item.articleNumber, product: item})} className="menu-link-circle c-content">
                             <i className="fa-regular fa-bag-shopping"></i>
                         </button>
                     </li>

@@ -25,7 +25,7 @@ export const ShoppingCartProvider = ({children}) => {
         return cartItems.find(item => item.articleNumber === articleNumber)?.quantity || 0
     }
 
-    const incrementQuantity = (cartItem) => {
+    const incrementQuantity = (cartItem) => { 
         const {articleNumber, product} = cartItem
 
         setCartItems(items => {
