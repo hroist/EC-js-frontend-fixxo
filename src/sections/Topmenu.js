@@ -26,7 +26,7 @@ const Topmenu = () => {
         setShowMenu(!showMenu)
     }
 
-    // Search box show on click
+    // Searchbox show on click
     const [showSearch, setShowSearch] = useState(false)
     const toggleSearch = () => {
         setShowSearch(!showSearch)
@@ -46,7 +46,7 @@ const Topmenu = () => {
             <div className="menu-links sb-content">
                 <MenuLinkCircle aria-label='compare' icon="fa-regular fa-code-compare fa-flip-horizontal" link="/compare" className="collapse-sm" />    
                 <MenuLinkCircle aria-label='wishlist' icon="fa-regular fa-heart" badgetext="4" link="/wishlist" /> 
-                <MenuCircleBtn aria-label='cart' icon="fa-regular fa-bag-shopping" badgetext={cartQuantity} onClick={toggleShoppingCart} data-testid="shoppingCart"/>
+                <MenuCircleBtn aria-label='cart' icon="fa-regular fa-bag-shopping" badgetext={cartQuantity === 0 ? "" : cartQuantity} onClick={toggleShoppingCart} data-testid="shoppingCart"/>
                 <ShoppingCart className={`${cartOpen ? "open" : ""}`} />
                 <div data-testid="magni-glass" className="search">
                     <MenuCircleBtn  aria-label='search-icon' onClick={toggleSearch} icon="fa-regular fa-magnifying-glass" className={`searchBtn ${ showSearch ? "active" : "" }`} />

@@ -11,7 +11,7 @@ const ProductGrid = ({ title, classNameCard, classNameSection, classNameGrid, it
                 items.map( product => <ProductCard classNameCard={classNameCard} key={product.articleNumber} item={product} />)
             }                     
         </div>
-</section>
+    </section>
   )
 }
 
