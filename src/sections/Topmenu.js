@@ -48,8 +48,8 @@ const Topmenu = () => {
                 <MenuLinkCircle aria-label='wishlist' icon="fa-regular fa-heart" badgetext="4" link="/wishlist" /> 
                 <MenuCircleBtn aria-label='cart' icon="fa-regular fa-bag-shopping" badgetext={cartQuantity} onClick={toggleShoppingCart} data-testid="shoppingCart"/>
                 <ShoppingCart className={`${cartOpen ? "open" : ""}`} />
-                <div className="search">
-                    <MenuCircleBtn aria-label='search' onClick={toggleSearch} icon="fa-regular fa-magnifying-glass" className={`searchBtn ${ showSearch ? "active" : "" }`} />
+                <div data-testid="magni-glass" className="search">
+                    <MenuCircleBtn  aria-label='search-icon' onClick={toggleSearch} icon="fa-regular fa-magnifying-glass" className={`searchBtn ${ showSearch ? "active" : "" }`} />
                     <MenuCircleBtn aria-label='closeSearch' onClick={toggleSearch} icon="fa-regular fa-xmark" className={`closeBtn ${ showSearch ? "active" : "" }`} />
                 </div>
                 <MenuCircleBtn onClick={toggleMenu} icon="fa-regular fa-bars" className="navbarToggle" />

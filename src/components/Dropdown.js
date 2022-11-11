@@ -9,7 +9,9 @@ const Dropdown = ({colors = []}) => {
 
         const [color, setColor] = useState("Choose a color")
         const chooseColor = (e) => {
-            setColor(e.target.value)
+            console.log(e.target)
+            console.log(e.target.value)
+            setColor(e.target.innerHTML)
             setDropdown(!dropdown)
         }
 
@@ -19,13 +21,12 @@ const Dropdown = ({colors = []}) => {
                 {
                 dropdown ? 
                 <div className="dropdown-open">
-                    <ul className="dropdown-list">
-                        <li onClick={chooseColor}>{colors[0]}</li>
-                        <li onClick={chooseColor}>{colors[1]}</li>
-                        <li onClick={chooseColor}>{colors[2]}</li>
-                        <li onClick={chooseColor}>{colors[3]}</li>
-                        <li onClick={chooseColor}>{colors[4]}</li>
-                    </ul>
+                    <select data-testid="dropdown-options" className="dropdown-list">
+                        <option key={colors[0]} value={colors[0]} onClick={chooseColor}>{colors[0]}</option>
+                        <option key={colors[1]} value={colors[1]} onClick={chooseColor}>{colors[1]}</option>
+                        <option key={colors[2]} value={colors[2]} onClick={chooseColor}>{colors[2]}</option>
+                        <option key={colors[3]} value={colors[3]} onClick={chooseColor}>{colors[3]}</option>
+                    </select>
                 </div> 
                 :  "" }
             </div>
