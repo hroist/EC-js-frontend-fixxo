@@ -3,36 +3,8 @@ import React, { useState } from 'react'
 const ImageSlider = ({ slides }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
   
-    const sliderStyles = {
-        height: '100%',
-        position: 'relative'
-    }
     const slideStyles = {
-        width: '100%',
-        height: `calc( 100% - 100px )`,
-        backgroundPosition: "center",
-        backgroundSize: "cover",
         backgroundImage: `url(${slides[currentIndex].url})`
-    }
-    const leftArrowStyles = {
-        position: "absolute",
-        top: '50%',
-        transform: 'translate(0, -50%)',
-        left: '32px',
-        fontSize: '45px',
-        color: '#fff',
-        zIndex: 1,
-        cursor: "pointer",
-    }
-    const rightArrowStyles = {
-        position: "absolute",
-        top: '50%',
-        transform: 'translate(0, -50%)',
-        right: '32px',
-        fontSize: '45px',
-        color: '#fff',
-        zIndex: 1,
-        cursor: "pointer",
     }
 
     const goToPrevious = () => {
@@ -47,18 +19,9 @@ const ImageSlider = ({ slides }) => {
         setCurrentIndex(newIndex)
     }
 
-    const thumbnailsStyles = {
-        display: "flex",
-        justifyContent: "space-between",
-        gap: "0.2rem",
-        marginTop: "0.2rem",
-    }
 
     const thumbnailStyles = {
-        height: "100px",
         width: `calc( 100% / ${slides.length} )`,
-        cursor: "pointer",
-        objectFit: "cover",
     }
 
     const goToSlide = slideIndex => {
@@ -66,17 +29,17 @@ const ImageSlider = ({ slides }) => {
     }
 
     return (
-    <div style={sliderStyles}>
-        <div style={leftArrowStyles} onClick={goToPrevious}>
+    <div className='slider'>
+        <div onClick={goToPrevious} className='left-arrow'>
             {"<"}
         </div>
-        <div style={rightArrowStyles} onClick={goToNext}>
+        <div onClick={goToNext} className='right-arrow'>
             {">"}
         </div>
-        <div style={slideStyles}></div>
-        <div style={thumbnailsStyles}>
+        <div style={slideStyles} className='slide'></div>
+        <div className='thumbnails'>
             {slides.map((slide, slideIndex) => (
-                <img style={thumbnailStyles} key={slideIndex} src={slide.url} onClick={() => goToSlide(slideIndex)} />
+                <img style={thumbnailStyles} key={slideIndex} src={slide.url} onClick={() => goToSlide(slideIndex)} alt="thumbnail" className="thumbnail"/>
             ))}
         </div>
     </div>

@@ -6,17 +6,17 @@ import Topmenu from '../sections/Topmenu'
 
 const ProductsPage = () => {
   window.top.document.title = 'Fixxo. || Products '
-  const {allProducts, fetchAllProducts} = useProductContext()
+  const {products, fetchProducts} = useProductContext()
       
   useEffect(() => {
-    fetchAllProducts()
+    fetchProducts(0)
   }, [])
 
   return (
     <>
         <Topmenu />
         <SiteTitle title="Products" />
-        <ProductGrid title="Products" classNameGrid="featured-product-grid" items={allProducts} />
+        <ProductGrid title="Products" classNameGrid="featured-product-grid" items={products} />
     </>
   )
 }

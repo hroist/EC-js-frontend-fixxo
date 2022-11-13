@@ -1,6 +1,6 @@
 import { render, fireEvent } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
-import Dropdown from "../components/Dropdown"
+import Dropdown from "../components/ui/Dropdown"
 
 describe( Dropdown, () => {
 

@@ -3,12 +3,12 @@ import ImageSlider from '../components/ImageSlider'
 import SizeButton from '../components/ui/SizeButton';
 import { useShoppingCart } from '../contexts/ShoppingCartContext';
 import { currencyFormatter } from '../utilities/currencyFormatter';
-import Dropdown from '../components/Dropdown'
+import Dropdown from '../components/ui/Dropdown'
 
 
 const ProductDetails = ({item}) => {
 
-    const { incrementQuantity, addMultipleItems } = useShoppingCart()
+    const { addMultipleItems } = useShoppingCart()
 
     const slides = [
         {url: item.imageName, title: item.name },
@@ -17,7 +17,7 @@ const ProductDetails = ({item}) => {
         {url: "https://images.pexels.com/photos/911254/pexels-photo-911254.jpeg", title: "Placeholder-3" }
     ];
   
-    const [counter, setCounter] = useState(0)
+    const [counter, setCounter] = useState(1)
     const handleClickPlus = () => {
         setCounter(counter + 1)
       }
