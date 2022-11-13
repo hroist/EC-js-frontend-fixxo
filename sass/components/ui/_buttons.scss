@@ -3,11 +3,11 @@
     background-color: $color-theme;
     color: $color-white;
     font-weight: 600;
-    font-size: 1rem;
     font-family: $font-poppins;
     padding: 0.8em 2em;
     border: none;
     cursor: pointer;
+    font-size: 12px;
     transition: 0.2s ease-in-out;
     
     &:before {
@@ -32,6 +32,10 @@
             border-image: linear-gradient(135deg, rgba(255,115,115,1) 0%, rgba(255,115,115,1) 100%) 1;
         }
     }
+
+    @include md {
+        font-size: 1rem;
+    }
 }
 
 .button-theme-dark {
@@ -39,7 +43,7 @@
     background-color: $color-dark;
     color: $color-white;
     font-weight: 600;
-    font-size: 1em;
+    font-size: 12px;
     font-family: $font-poppins;
     padding: 0.8em 2em;
     border: none;
@@ -67,6 +71,10 @@
             border-image: linear-gradient(135deg, rgba(35,38,42,1) 0%, rgba(35,38,42,1) 100%) 1;
         }
     }
+
+    @include md {
+        font-size: 1rem;
+    }
 }
 
 .button-theme-white {
@@ -74,7 +82,7 @@
     background-color: $color-white;
     color: $color-text-dark;
     font-weight: 600;
-    font-size: 1em;
+    font-size: 12px;
     font-family: $font-poppins;
     padding: 0.8em 2em;
     border: none;
@@ -102,13 +110,17 @@
             border-image: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 100%) 1;
         }
     }
+
+    @include md {
+        font-size: 1rem;
+    }
 }
 
 .button-forms {
     background-color: $color-theme;
     color: $color-white;
     font-weight: 600;
-    font-size: 1em;
+    font-size: 12px;
     font-family: $font-poppins;
     padding: 0.8rem 1rem;
     border: none;
@@ -123,6 +135,10 @@
 
     @include xl {
         width: 75%;
+    }
+
+    @include md {
+        font-size: 1rem;
     }
 }
 

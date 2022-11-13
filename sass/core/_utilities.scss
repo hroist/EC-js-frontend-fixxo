@@ -103,11 +103,15 @@ p {
 }
 
 .container-small {
-    max-width: 65%;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
     padding-left: 1rem;
     padding-right: 1rem;
+
+    @include sm {
+        max-width: 65%;
+    }
 }
 
 // HELP CLASSES
