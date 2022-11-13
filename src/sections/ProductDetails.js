@@ -70,13 +70,13 @@ const ProductDetails = ({item}) => {
                             <Dropdown colors={["red", "gray", "black", "white"]} />
                         </div>
                         <div className="product-details-grid">
-                            <div className='l-content'>Quantity:</div>
+                            <div className='l-content'>Quantity:</div> 
                             <div className="start-content gap">
                                 <div className="quantity-counter">
                                     <div onClick={handleClickMinus} className='decrease c-content'>
                                         -
                                     </div>
-                                    <div className='counter-number c-content'>
+                                    <div data-testid="counter" className='counter-number c-content'>
                                         {counter}
                                     </div>
                                     <div onClick={handleClickPlus} className='increase c-content'>
