@@ -47,7 +47,7 @@ const ProductCard = ({item, classNameCard}) => {
             <div className="card-text text-center">
                 <h3>{item.category}</h3>
                 <NavLink to={`/products/${item.articleNumber}`}>
-                <h2>{item.name}</h2>
+                <h2 data-testid="product-name">{item.name}</h2>
                 </NavLink>
                 <div className="card-review-stars">
                     <i className="fa-solid fa-star"></i>

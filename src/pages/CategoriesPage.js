@@ -1,5 +1,4 @@
 import React from 'react'
-import Counter from '../tests/Counter'
 import SiteTitle from '../sections/SiteTitle'
 import Topmenu from '../sections/Topmenu'
 
@@ -10,7 +9,6 @@ const CategoriesPage = () => {
     <>
         <Topmenu />
         <SiteTitle title="Categories" />
-        <Counter />
     </>
   )
 }

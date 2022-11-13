@@ -77,25 +77,29 @@
 
         .quantity-counter {
           border: 1px solid $color-gray-40;
-          height: 25px;
-          width: 95px;
+          height: 20px;
+          width: 80px;
+
+          button {
+            background-color: transparent;
+            border: none;
+          }
               
           .decrease {
               border-right: 1px solid $color-gray-40;;
-              width: 30px;
-              font-weight: $font-weight-bold;
+              font-weight: $font-weight-medium;
               font-size: $font-size-20;
               cursor: pointer;
           }
       
           .counter-number {
-              width: 35px;
+              width: 30px;
+              font-size: $font-size-16;
           }
       
           .increase {
               border-left: 1px solid $color-gray-40;
-              width: 30px;
-              font-weight: $font-weight-bold;
+              font-weight: $font-weight-medium;
               font-size: $font-size-20;
               cursor: pointer;
           }

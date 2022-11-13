@@ -11,17 +11,17 @@ const ShoppingCartItem = ({item}) => {
             <img src={item.product.imageName} alt={item.product.name} />
         </div>
         <div className='item-info'>
-            <span className="item-info-name">{item.product.name}</span>
+            <span data-testid="itemNameInShoppingCart" className="item-info-name">{item.product.name}</span>
             <div className="quantity-counter">
-                <div onClick={() => decrementQuantity(item)} className='decrease c-content'>
+                <button onClick={() => decrementQuantity(item)} className='decrease c-content'>
                     -
-                </div>
+                </button>
                 <div data-testid="quantity" className='counter-number c-content'>
                     {item.quantity}
                 </div>
-                <div onClick={() => incrementQuantity(item)} className='increase c-content'>
+                <button data-testid="increment" onClick={() => incrementQuantity(item)} className='increase c-content'>
                     +
-                </div>
+                </button>
             </div>
         </div>
         <div className='item-price'>
